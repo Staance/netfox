@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 8.0, *)
 class NFXSettingsController: NFXGenericController, UITableViewDelegate, UITableViewDataSource
 {
     // MARK: Properties

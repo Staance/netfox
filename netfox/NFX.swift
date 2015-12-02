@@ -11,6 +11,7 @@ import UIKit
 let nfxVersion = "1.7"
 
 @objc
+@available(iOS 8.0, *)
 public class NFX: NSObject
 {
     

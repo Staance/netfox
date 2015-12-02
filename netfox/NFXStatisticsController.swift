@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 8.0, *)
 class NFXStatisticsController: NFXGenericController
 {
     var scrollView: UIScrollView = UIScrollView()

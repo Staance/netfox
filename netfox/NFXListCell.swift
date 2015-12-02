@@ -9,6 +9,7 @@ import Foundation
 
 import UIKit
 
+@available(iOS 8.0, *)
 class NFXListCell: UITableViewCell
 {
     

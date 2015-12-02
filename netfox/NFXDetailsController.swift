@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import MessageUI
 
+@available(iOS 8.0, *)
 class NFXDetailsController: NFXGenericController, MFMailComposeViewControllerDelegate
 {
     var infoButton: UIButton = UIButton()

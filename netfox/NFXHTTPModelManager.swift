@@ -7,8 +7,10 @@
 
 import Foundation
 
+@available(iOS 8.0, *)
 private let _sharedInstance = NFXHTTPModelManager()
 
+@available(iOS 8.0, *)
 final class NFXHTTPModelManager: NSObject
 {
     static let sharedInstance = NFXHTTPModelManager()

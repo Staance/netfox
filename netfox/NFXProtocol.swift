@@ -8,6 +8,7 @@
 import Foundation
 
 @objc
+@available(iOS 8.0, *)
 public class NFXProtocol: NSURLProtocol
 {
     var connection: NSURLConnection?
