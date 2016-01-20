@@ -33,7 +33,7 @@ class NFXDetailsController: NFXGenericController, MFMailComposeViewControllerDel
         
         self.title = "Details"
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: Selector("actionButtonPressed"))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: Selector("actionButtonPressed:"))
         
         self.infoButton = createHeaderButton("Info", x: 0, selector: Selector("infoButtonPressed"))
         self.view.addSubview(self.infoButton)
@@ -90,6 +90,7 @@ class NFXDetailsController: NFXGenericController, MFMailComposeViewControllerDel
         textLabel.numberOfLines = 0
         textLabel.attributedText = content
         textLabel.sizeToFit()
+		textLabel.textAlignment = .Left
         scrollView.addSubview(textLabel)
         
         var moreButton: UIButton
@@ -115,7 +116,7 @@ class NFXDetailsController: NFXGenericController, MFMailComposeViewControllerDel
         return scrollView
     }
     
-    func actionButtonPressed()
+    func actionButtonPressed(sender: UIBarButtonItem)
     {
         let actionSheetController: UIAlertController = UIAlertController(title: "Share", message: "", preferredStyle: .ActionSheet)
         
@@ -132,6 +133,10 @@ class NFXDetailsController: NFXGenericController, MFMailComposeViewControllerDel
             self.sendMailWithBodies(true)
         }
         actionSheetController.addAction(fullLogAction)
+        
+        if let popoverController = actionSheetController.popoverPresentationController {
+            popoverController.barButtonItem = sender
+        }
         
         self.presentViewController(actionSheetController, animated: true, completion: nil)
     }
